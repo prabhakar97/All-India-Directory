@@ -1,9 +1,6 @@
 package in.techbeat.AllIndiaDirectory.views;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.AsyncTask;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +12,7 @@ import in.techbeat.AllIndiaDirectory.dao.NumberDetailsDAO;
 import in.techbeat.AllIndiaDirectory.helpers.LookupTask;
 import in.techbeat.AllIndiaDirectory.helpers.RowListener;
 import in.techbeat.AllIndiaDirectory.model.NumberDetail;
-import in.techbeat.AllIndiaDirectory.utils.SuccessCallable;
+import in.techbeat.AllIndiaDirectory.helpers.SuccessCallable;
 
 import java.util.Map;
 

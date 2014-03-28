@@ -15,8 +15,8 @@ import in.techbeat.AllIndiaDirectory.dao.NumberDetailsDAO;
 import in.techbeat.AllIndiaDirectory.helpers.LookupTask;
 import in.techbeat.AllIndiaDirectory.helpers.RowListener;
 import in.techbeat.AllIndiaDirectory.model.NumberDetail;
-import in.techbeat.AllIndiaDirectory.utils.DirectorySearcher;
-import in.techbeat.AllIndiaDirectory.utils.SuccessCallable;
+import in.techbeat.AllIndiaDirectory.helpers.DirectorySearcher;
+import in.techbeat.AllIndiaDirectory.helpers.SuccessCallable;
 
 import java.util.Map;
 import java.util.concurrent.Callable;

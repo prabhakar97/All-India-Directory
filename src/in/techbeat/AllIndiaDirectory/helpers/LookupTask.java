@@ -1,14 +1,8 @@
 package in.techbeat.AllIndiaDirectory.helpers;
 
-import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
-import in.techbeat.AllIndiaDirectory.dao.NumberDetailsDAO;
 import in.techbeat.AllIndiaDirectory.model.NumberDetail;
-import in.techbeat.AllIndiaDirectory.utils.DirectorySearcher;
-import in.techbeat.AllIndiaDirectory.utils.SuccessCallable;
 
 import java.util.concurrent.Callable;
 

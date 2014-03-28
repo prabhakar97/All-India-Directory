@@ -1,15 +1,11 @@
 package in.techbeat.AllIndiaDirectory;
 
 import android.app.ListActivity;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.provider.CallLog;
 import android.util.Log;
-import in.techbeat.AllIndiaDirectory.helpers.DatabaseHelper;
-import in.techbeat.AllIndiaDirectory.utils.DirectorySearcher;
+import in.techbeat.AllIndiaDirectory.helpers.DirectorySearcher;
 import in.techbeat.AllIndiaDirectory.views.CallAdapter;
 
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class ByLogs extends ListActivity {
