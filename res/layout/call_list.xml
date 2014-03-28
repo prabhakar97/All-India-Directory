@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:weightSum="1">
+    <View
+            android:id="@+id/SplitLine_ver1"
+            android:layout_width="match_parent"
+            android:layout_height= "16dp"
+            android:background="@android:color/black" />
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" android:weightSum="1" android:background="#fff">
+        <TextView
+                android:layout_width="198dp"
+                android:layout_height="wrap_content"
+                android:text="Number"
+                android:id="@+id/number" android:textSize="20dp"
+                android:textColorHighlight="#6bffbe" android:background="#ffffff" android:textColor="#8c8c8c"
+                android:gravity="center_vertical" android:paddingLeft="4dp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Log type"
+                android:id="@+id/logType" android:background="#ffffff"
+                android:textColor="#aaa" android:gravity="center_vertical|fill_vertical" android:paddingRight="2dp"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" android:weightSum="1" android:background="#fff">
+        <TextView
+                android:layout_width="260dp"
+                android:layout_height="match_parent"
+                android:text="Name"
+                android:id="@+id/name" android:textSize="20dp"
+                android:background="#ffffff" android:textColor="#aaa"
+                android:gravity="center_vertical" android:paddingLeft="4dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Type"
+                android:id="@+id/numberType" android:background="#ffffff"
+                android:textColor="#888" android:gravity="center_vertical|center_horizontal"
+                android:paddingRight="2dp" android:layout_weight="0.87"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Address"
+                android:id="@+id/address" android:textSize="16dp" android:background="#888"
+                android:textColor="#eee" android:gravity="center_vertical|center_horizontal"/>
+    </LinearLayout>
+</LinearLayout>
+
