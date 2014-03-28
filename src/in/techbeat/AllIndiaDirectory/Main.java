@@ -19,7 +19,8 @@ public class Main extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        TabHost tabHost = getTabHost();
+        final TabHost tabHost = getTabHost();
+        final Resources resources = getResources();
 
         Intent intentByNumber = new Intent().setClass(this, ByNumber.class);
         TabHost.TabSpec tsbn = tabHost.newTabSpec("Number").setIndicator("Number").setContent(intentByNumber);
@@ -31,15 +32,29 @@ public class Main extends TabActivity {
         tabHost.addTab(tsbl);
 
         tabHost.setCurrentTab(0);
+
+        tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            @Override
+            public void onTabChanged(String s) {
+                int tabCount = tabHost.getTabWidget().getTabCount();
+                for (int i = 0; i < tabCount; i++) {
+                    final View view = tabHost.getTabWidget().getChildTabViewAt(i);
+                    view.setBackgroundDrawable(resources.getDrawable(R.drawable.black));
+                }
+                tabHost.getCurrentTabView().setBackgroundDrawable(resources.getDrawable(R.drawable.green));
+            }
+        });
         int tabCount = tabHost.getTabWidget().getTabCount();
         for (int i = 0; i < tabCount; i++) {
             final View view = tabHost.getTabWidget().getChildTabViewAt(i);
+            view.setBackgroundDrawable(resources.getDrawable(R.drawable.black));
             if ( view != null ) {
                 // reduce height of the tab
                 view.getLayoutParams().height *= 0.66;
 
                 //  get title text view
                 final View textView = view.findViewById(android.R.id.title);
+
                 if ( textView instanceof TextView) {
                     // just in case check the type
 
@@ -54,5 +69,7 @@ public class Main extends TabActivity {
                 }
             }
         }
+        tabHost.getCurrentTabView().setBackgroundDrawable(resources.getDrawable(R.drawable.green));
     }
+
 }

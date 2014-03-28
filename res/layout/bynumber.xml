@@ -3,6 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
+              android:background="@drawable/red"
               android:layout_height="match_parent" android:weightSum="1">
 
     <TextView
@@ -10,52 +11,65 @@
             android:layout_height="wrap_content"
             android:text="Enter phone number"
             android:id="@+id/textView" android:layout_gravity="center_horizontal" android:layout_weight="0.06"
-            android:gravity="center_vertical|center_horizontal" android:textSize="16dp"/>
+            android:gravity="center_vertical|center_horizontal" android:textSize="20sp" android:textColor="#00ffff"/>
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:ems="10"
-            android:id="@+id/inputPhone" android:layout_gravity="center_horizontal" android:layout_weight="0.06"/>
+            android:background="@drawable/yellow"
+            android:id="@+id/inputPhone" android:layout_gravity="center_horizontal" android:layout_weight="0.06"
+            android:textColor="#800080" android:gravity="center_vertical|center_horizontal"/>
+    <View
+            android:id="@+id/SplitLine2"
+            android:layout_width="match_parent"
+            android:layout_height= "16dp" />
     <Button
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Search!"
-            android:id="@+id/search" android:layout_gravity="center_horizontal" android:layout_weight="0.06"/>
+            android:text="@string/search_button"
+            android:background="@drawable/blue"
+            android:id="@+id/search" android:layout_gravity="center_horizontal" android:layout_weight="0.06"
+            android:textColor="#ffff00" android:textSize="20sp"/>
+    <View
+            android:id="@+id/SplitLine3"
+            android:layout_width="match_parent"
+            android:layout_height= "16dp" />
+
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:visibility="invisible"
             android:id="@+id/layout1"
-            android:layout_height="wrap_content" android:weightSum="1" android:background="#fff">
+            android:layout_height="wrap_content" android:weightSum="1">
         <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="Number"
-                android:id="@+id/number1" android:textSize="20dp"
-                android:textColorHighlight="#6bffbe" android:background="#ffffff" android:textColor="#8c8c8c"
-                android:gravity="center_vertical" android:paddingLeft="4dp"/>
+                android:id="@+id/number1" android:textSize="30sp"
+                android:background="@drawable/purple" android:textColor="#eee"
+                android:gravity="center_vertical|center_horizontal"/>
     </LinearLayout>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:visibility="invisible"
             android:id="@+id/layout2"
-            android:layout_height="wrap_content" android:weightSum="1" android:background="#fff">
+            android:layout_height="wrap_content" android:weightSum="1" android:background="@drawable/yellow">
         <TextView
-                android:layout_width="260dp"
+                android:layout_width="230dp"
                 android:layout_height="match_parent"
                 android:text="Name"
-                android:id="@+id/name1" android:textSize="20dp"
-                android:background="#ffffff" android:textColor="#aaa"
+                android:id="@+id/name1" android:textSize="20sp"
+                android:textColor="#800080"
                 android:gravity="center_vertical" android:paddingLeft="4dp"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Type"
-                android:id="@+id/numberType1" android:background="#ffffff"
-                android:textColor="#888" android:gravity="center_vertical|center_horizontal"
-                android:paddingRight="2dp" android:layout_weight="0.87"/>
+                android:id="@+id/numberType1"
+                android:textColor="#aaeeaa" android:gravity="center_vertical|center_horizontal"
+                android:paddingRight="2dp" android:layout_weight="0.78"/>
     </LinearLayout>
     <LinearLayout
             android:orientation="horizontal"
@@ -65,9 +79,9 @@
             android:layout_height="wrap_content">
         <TextView
                 android:layout_width="match_parent"
-                android:layout_height="29dp"
+                android:layout_height="40dp"
                 android:text="Address"
-                android:id="@+id/address1" android:textSize="16dp" android:background="#888"
+                android:id="@+id/address1" android:textSize="16sp" android:background="@drawable/green"
                 android:textColor="#eee" android:gravity="center_vertical|center_horizontal"/>
     </LinearLayout>
 
