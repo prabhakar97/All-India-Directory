@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import in.techbeat.AllIndiaDirectory.R;
 import in.techbeat.AllIndiaDirectory.dao.NumberDetailsDAO;
+import in.techbeat.AllIndiaDirectory.helpers.Constants;
 import in.techbeat.AllIndiaDirectory.helpers.LookupTask;
 import in.techbeat.AllIndiaDirectory.helpers.RowListener;
 import in.techbeat.AllIndiaDirectory.model.NumberDetail;
@@ -74,12 +75,15 @@ public class CallAdapter extends ArrayAdapter<Map.Entry<String, String>> {
         new LookupTask().execute(phoneNumber, new SuccessCallable() {
             @Override
             public Void call() throws Exception {
-                name.setText(getNumberDetails().getName());
+                final String name1 = getNumberDetails().getName();
+                name.setText(name1);
                 number.setText(getNumberDetails().getNumber());
                 numberType.setText(getNumberDetails().getNumberType());
                 address.setText(getNumberDetails().getAddress());
-                numberDetailsDAO.insertNumberDetail(getNumberDetails());
-                rowView.setOnClickListener(new RowListener(getNumberDetails().getName(), getNumberDetails().getNumber(), context));
+                if (!name1.equals(Constants.TEMPORARY_ERROR.getText())) {
+                    numberDetailsDAO.insertNumberDetail(getNumberDetails());
+                }
+                rowView.setOnClickListener(new RowListener(name1, getNumberDetails().getNumber(), context));
                 return null;
             }
         }, null);
