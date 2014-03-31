@@ -14,7 +14,7 @@ import in.techbeat.AllIndiaDirectory.model.NumberDetail;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "numbers.db";
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 2;
     private static final String TABLE_NAME = "number_details";
 
     private static final String TABLE_CREATE_SQL = "CREATE TABLE "+ TABLE_NAME + " (" +
@@ -38,9 +38,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i2) {
-        Log.w("DatabaseHelper", "Dropping " + TABLE_NAME);
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-        onCreate(sqLiteDatabase);
+        Log.w("DatabaseHelper", "Removing blank entries from " + TABLE_NAME);
+        sqLiteDatabase.execSQL("DELETE FROM " + TABLE_NAME + " WHERE name = ''");
     }
 
 }

@@ -67,6 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Type"
+                android:textSize="12dp"
                 android:id="@+id/numberType1"
                 android:textColor="#aaeeaa" android:gravity="center_vertical|center_horizontal"
                 android:paddingRight="2dp" android:layout_weight="0.78"/>

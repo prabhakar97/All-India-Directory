@@ -12,11 +12,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import in.techbeat.AllIndiaDirectory.dao.NumberDetailsDAO;
-import in.techbeat.AllIndiaDirectory.helpers.LookupTask;
-import in.techbeat.AllIndiaDirectory.helpers.RowListener;
+import in.techbeat.AllIndiaDirectory.helpers.*;
 import in.techbeat.AllIndiaDirectory.model.NumberDetail;
-import in.techbeat.AllIndiaDirectory.helpers.DirectorySearcher;
-import in.techbeat.AllIndiaDirectory.helpers.SuccessCallable;
 
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -139,10 +136,14 @@ public class ByNumber extends Activity {
                     new LookupTask().execute(phoneNumber, new SuccessCallable() {
                         @Override
                         public Void call() throws Exception {
-                            address.setText(getNumberDetails().getAddress());
-                            name.setText(getNumberDetails().getName());
+                            final String name1 = getNumberDetails().getName();
+                            name.setText(name1);
+                            final String address1 = getNumberDetails().getAddress();
+                            address.setText(address1);
                             numberType.setText(getNumberDetails().getNumberType());
-                            numberDetailsDAO.insertNumberDetail(getNumberDetails());
+                            if (!name1.equals(Constants.TEMPORARY_ERROR.getText())) {
+                                numberDetailsDAO.insertNumberDetail(getNumberDetails());
+                            }
                             return null;
                         }
                     }, null);

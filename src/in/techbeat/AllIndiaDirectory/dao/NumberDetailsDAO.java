@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+import in.techbeat.AllIndiaDirectory.helpers.Constants;
 import in.techbeat.AllIndiaDirectory.helpers.DatabaseHelper;
 import in.techbeat.AllIndiaDirectory.model.NumberDetail;
 
@@ -56,6 +57,9 @@ public class NumberDetailsDAO {
 
     public void insertNumberDetail(final NumberDetail numberDetail) {
         ContentValues values = new ContentValues();
+        if (numberDetail.getName().equals(Constants.TEMPORARY_ERROR.getText())) {
+            return;
+        }
         values.put("number", numberDetail.getNumber());
         values.put("name", numberDetail.getName());
         values.put("address", numberDetail.getAddress());

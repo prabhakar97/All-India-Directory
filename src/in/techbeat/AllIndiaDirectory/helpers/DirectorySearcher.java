@@ -53,7 +53,13 @@ public class DirectorySearcher {
             final JSONObject json = (JSONObject) new JSONParser().parse(response);
             final NumberDetail res = new NumberDetail();
             res.setNumber((String) json.get("number"));
-            res.setName((String) json.get("name"));
+            final String name = (String) json.get("name");
+            if (name.equals("")) {
+                res.setName(Constants.TEMPORARY_ERROR.getText());
+            }
+            else {
+                res.setName(name);
+            }
             res.setAddress((String) json.get("address"));
             res.setNumberType((String) json.get("number_type"));
             return res;
