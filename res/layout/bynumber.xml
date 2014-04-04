@@ -57,12 +57,12 @@
             android:id="@+id/layout2"
             android:layout_height="wrap_content" android:weightSum="1" android:background="@drawable/yellow">
         <TextView
-                android:layout_width="230dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="Name"
                 android:id="@+id/name1" android:textSize="20sp"
                 android:textColor="#800080"
-                android:gravity="center_vertical" android:paddingLeft="4dp"/>
+                android:gravity="center_vertical" android:paddingLeft="4dp" android:layout_weight="0.7"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -70,7 +70,7 @@
                 android:textSize="12dp"
                 android:id="@+id/numberType1"
                 android:textColor="#aaeeaa" android:gravity="center_vertical|center_horizontal"
-                android:paddingRight="2dp" android:layout_weight="0.78"/>
+                android:paddingRight="2dp" android:layout_weight="0.3"/>
     </LinearLayout>
     <LinearLayout
             android:orientation="horizontal"

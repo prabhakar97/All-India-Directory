@@ -10,19 +10,19 @@
             android:layout_width="match_parent"
             android:layout_height="60dp" android:weightSum="1" android:background="@drawable/purple">
         <TextView
-                android:layout_width="198dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="Number"
                 android:id="@+id/number" android:textSize="20dp"
                 android:textColorHighlight="#6bffbe" android:textColor="#eee"
-                android:gravity="center_vertical" android:paddingLeft="4dp"/>
+                android:gravity="center_vertical" android:paddingLeft="4dp" android:layout_weight="0.7"/>
         <TextView
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="Log type"
                 android:id="@+id/logType"
                 android:textColor="#ddd" android:gravity="fill_vertical|center_horizontal" android:paddingRight="2dp"
-                android:textSize="12dp"/>
+                android:textSize="12dp" android:layout_weight="0.3"/>
     </LinearLayout>
 
     <LinearLayout
@@ -30,19 +30,19 @@
             android:layout_width="match_parent"
             android:layout_height="50dp" android:weightSum="1" android:background="@drawable/yellow">
         <TextView
-                android:layout_width="230dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="Name"
                 android:id="@+id/name" android:textSize="20dp"
                 android:textColor="#800080"
-                android:gravity="center_vertical" android:paddingLeft="4dp"/>
+                android:gravity="center_vertical" android:paddingLeft="4dp" android:layout_weight="0.6"/>
         <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="Type"
                 android:id="@+id/numberType"
                 android:textColor="#aaeeaa" android:gravity="center_vertical|center_horizontal"
-                android:paddingRight="2dp" android:layout_weight="0.87" android:textSize="12dp"/>
+                android:paddingRight="2dp" android:layout_weight="0.4" android:textSize="12dp"/>
     </LinearLayout>
     <LinearLayout
             android:orientation="horizontal"
@@ -50,7 +50,7 @@
             android:layout_height="70dp">
         <TextView
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
                 android:text="Address"
                 android:id="@+id/address" android:textSize="16dp" android:background="@drawable/green"
                 android:textColor="#eee" android:gravity="center_vertical|center_horizontal"/>
